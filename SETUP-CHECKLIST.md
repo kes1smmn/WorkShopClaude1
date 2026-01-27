@@ -4,59 +4,37 @@ Complete this checklist **before** the workshop. Aim to finish at least 2 days i
 
 ---
 
-## 1. Access Requests (1-2 weeks before)
+## 1. Access Requests ()
 
-- [ ] AWS Account Access - Submit ServiceNow ticket
-- [ ] AWS SSO Role: `BedrockAPI-Access` - Request from DevOps
-- [ ] Bedrock Model ARNs - Get from DevOps (Sonnet, Haiku, Opus)
-- [ ] SSL Certificate: `ARUPRootCA.crt` - Get from IT Security
+- [ ] AWS Account Access - We sent a request to DevOps
+- [ ] AWS SSO Role: `BedrockAPI-Access` - We sent a request to DevOps
+- [ ] Bedrock Model ARNs - Get from DevOps (Sonnet, Haiku, Opus) - We sent a request to DevOps
+
+- [ ] SSL Certificate: `ARUPRootCA.crt` - Instructions provided [https://wiki331.aruplab.net/download/attachments/301760640/ARUPRootCA.crt?version=1&modificationDate=1762490085419&api=v2
+ ] 
+- [ ] Install VSCode/PyCharm installed (optional but recommended)
+- [ ] Github Access - Ensure you can clone repos from https://github.com/kes1smmn/WorkShopClaude1 (you will clone our repo)
+- [ ] Docker Desktop installed (optional but recommended)
+    
 
 ---
 
 ## 2. Software Installation
 
-### All Platforms
+### Install Claude code for Windows
 
-- [ ] **Node.js v18+**
-  ```bash
-  node --version  # Should show v18.x.x or higher
-  ```
-  Download: https://nodejs.org/
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+```Windows CMD
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
+```
 
-- [ ] **Python 3.10+**
-  ```bash
-  python --version  # Should show 3.10.x or higher
-  ```
-  Download: https://python.org/
+### Install Claude code for macOS/Linux
 
-- [ ] **Git**
-  ```bash
-  git --version
-  ```
-  Download: https://git-scm.com/
-
-- [ ] **AWS CLI v2**
-  ```bash
-  aws --version  # Should show aws-cli/2.x.x
-  ```
-  Download: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
-
-- [ ] **Docker Desktop**
-  ```bash
-  docker --version
-  docker-compose --version
-  ```
-  Download: https://docker.com/products/docker-desktop
-
-- [ ] **VS Code** (optional but recommended)
-  Download: https://code.visualstudio.com/
-
-### Windows Only
-
-- [ ] **Git Bash** (included with Git for Windows)
-- [ ] Verify Git Bash path: `C:\Program Files\Git\bin\bash.exe`
-
----
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+````
 
 ## 3. AWS SSO Configuration
 
