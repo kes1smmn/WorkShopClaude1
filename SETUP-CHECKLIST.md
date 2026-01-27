@@ -4,22 +4,60 @@ Complete this checklist **before** the workshop. Aim to finish at least 2 days i
 
 ---
 
-## 1. Access Requests ()
+Your are welcome to get through this checklist before 
+
+## 1. Access Requests
 
 - [ ] AWS Account Access - We sent a request to DevOps
 - [ ] AWS SSO Role: `BedrockAPI-Access` - We sent a request to DevOps
 - [ ] Bedrock Model ARNs - Get from DevOps (Sonnet, Haiku, Opus) - We sent a request to DevOps
-
-- [ ] SSL Certificate: `ARUPRootCA.crt` - Instructions provided [https://wiki331.aruplab.net/download/attachments/301760640/ARUPRootCA.crt?version=1&modificationDate=1762490085419&api=v2
- ] 
+- [ ] AWS CLI installed - https://aws.amazon.com/cli/
+- [ ] Mac Users : Homebrew installed - https://brew.sh/
+- [ ] Windows Users : Git Bash installed - https://git-scm.com/download/win
+- [ ] SSL Certificate: `ARUPRootCA.crt` - Instructions provided
 - [ ] Install VSCode/PyCharm installed (optional but recommended)
 - [ ] Github Access - Ensure you can clone repos from https://github.com/kes1smmn/WorkShopClaude1 (you will clone our repo)
-- [ ] Docker Desktop installed (optional but recommended)
+- [ ] Docker installed (optional but recommended)
     
+
+https://code.claude.com/docs/en/setup
+Set up Claude Code - Claude Code Docs
+Install, authenticate, and start using Claude Code on your development machine.
+ 
 
 ---
 
 ## 2. Software Installation
+
+### Install git or confirm installation
+#### MacOS/Linux
+```bash
+brew install git
+```
+
+`#### Windows`
+```Windows CMD
+git --version || winget install --id Git.Git -e --source winget
+```
+
+
+### AWS CLI v2 Installation
+
+### Windows AWS CLI v2 Installation
+```Windows CMD
+msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi
+aws --version
+```
+
+### macOS AWS CLI v2 Installation
+```bash
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+sudo installer -pkg AWSCLIV2.pkg -target /
+which aws
+aws --version
+```
+
+
 
 ### Install Claude code for Windows
 
@@ -66,12 +104,13 @@ You should see your user details in the output.
 
 ## 4. SSL Certificate Setup
 
+https://wiki331.aruplab.net/download/attachments/301760640/ARUPRootCA.crt?version=1&modificationDate=1762490085419&api=v2
+
 ```bash
 # Create certs directory
 mkdir -p ~/certs
 
-# Copy ARUPRootCA.crt to ~/certs/
-# (Get file from IT Security)
+
 ```
 
 Verify:
