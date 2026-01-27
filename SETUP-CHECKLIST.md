@@ -1,10 +1,7 @@
 # Workshop Setup Checklist
 
-Complete this checklist **before** the workshop. Aim to finish at least 2 days in advance.
-
+You are welcome to complete this checklist **before** the workshop. We will allot time during the workshop to help each other.
 ---
-
-Your are welcome to get through this checklist before 
 
 ## 1. Access Requests
 
@@ -58,22 +55,6 @@ aws --version
 ```
 
 
-
-### Install Claude code for Windows
-
-```powershell
-irm https://claude.ai/install.ps1 | iex
-```
-```Windows CMD
-curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
-```
-
-### Install Claude code for macOS/Linux
-
-```bash
-curl -fsSL https://claude.ai/install.sh | bash
-````
-
 ## 3. AWS SSO Configuration
 
 ```bash
@@ -122,16 +103,21 @@ ls ~/certs/ARUPRootCA.crt
 
 ## 5. Claude Code Installation
 
-```bash
-npm install -g @anthropic-ai/claude-code
+### Install Claude code for Windows
+
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+```Windows CMD
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
 ```
 
-Verify:
-```bash
-claude --version
-```
+### Install Claude code for macOS/Linux
 
----
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+````
+
 
 ## 6. Claude Code Configuration
 
@@ -150,10 +136,10 @@ mkdir -p ~/.claude
     "AWS_PROFILE": "bedrock",
     "AWS_REGION": "us-west-2",
     "CLAUDE_CODE_USE_BEDROCK": "1",
-    "ANTHROPIC_MODEL": "<SONNET_ARN>",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "<OPUS_ARN>",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "<SONNET_ARN>",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "<HAIKU_ARN>",
+    "ANTHROPIC_MODEL": "<SONNET_ARN>", //you will get this from DevOps
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "<OPUS_ARN>", //you will get this from DevOps
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "<SONNET_ARN>", //you will get this from DevOps
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "<HAIKU_ARN>", //you will get this from DevOps
     "NODE_EXTRA_CA_CERTS": "/Users/<USERNAME>/certs/ARUPRootCA.crt",
     "NODE_TLS_REJECT_UNAUTHORIZED": "0",
     "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "4096",
@@ -170,11 +156,11 @@ mkdir -p ~/.claude
     "AWS_REGION": "us-west-2",
     "CLAUDE_CODE_USE_BEDROCK": "1",
     "CLAUDE_CODE_GIT_BASH_PATH": "C:\\Program Files\\Git\\bin\\bash.exe",
-    "ANTHROPIC_MODEL": "<SONNET_ARN>",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "<OPUS_ARN>",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "<SONNET_ARN>",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "<HAIKU_ARN>",
-    "NODE_EXTRA_CA_CERTS": "C:\\Users\\<USERNAME>\\certs\\ARUPRootCA.crt",
+    "ANTHROPIC_MODEL": "<SONNET_ARN>", //you will get this from DevOps
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "<OPUS_ARN>", //you will get this from DevOps
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "<SONNET_ARN>", //you will get this from DevOps
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "<HAIKU_ARN>", //you will get this from DevOps
+    "NODE_EXTRA_CA_CERTS": "C:\\Users\\<USERNAME>\\certs\\ARUPRootCA.crt", 
     "NODE_TLS_REJECT_UNAUTHORIZED": "0",
     "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "4096",
     "MAX_THINKING_TOKENS": "1024"
