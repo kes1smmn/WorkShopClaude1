@@ -214,11 +214,11 @@ Should show `context7` in the list.
 
 ---
 
-## 10. Test Docker Setup
+## 10. Test Docker is installed
 
 ```bash
 cd WorkShopClaude1
-docker-compose up --build
+docker --help
 ```
 
 Visit http://localhost:3000 - you should see the File Hasher app.
