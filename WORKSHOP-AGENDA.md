@@ -19,9 +19,33 @@
 
 ---
 
+## 💡 Helpful Tips for the Workshop
+
+Before we begin, here are some practical tips to make your workshop experience smoother:
+
+| Tip | Why It Helps |
+|-----|--------------|
+| **Use `caffeinate`** | Prevents your Mac from sleeping during long Docker builds or Claude operations. Run `caffeinate -d` in a separate terminal, or `caffeinate -d -t 7200` for a 2-hour session. |
+| **Open multiple terminal windows** | Keep one terminal dedicated to Claude Code, another for Docker logs (`docker-compose logs -f`), and a third for git or manual commands. This prevents interrupting Claude mid-task. |
+| **Position terminals side-by-side** | See Claude's output while watching Docker build progress or browsing localhost:3000. |
+| **Keep a browser tab on localhost:3000** | Quick refresh to see changes after each iteration. |
+| **Use `/cost` periodically** | Track token usage, especially during the Build Together section where prompts are longer. |
+| **Use `Cmd+K` to clear terminal** | Keeps your terminal readable when output gets cluttered. |
+| **Start Docker Desktop first** | Ensure Docker Desktop is running before the workshop begins to avoid delays. |
+
+**Quick setup command (run before workshop starts):**
+```bash
+# In a dedicated terminal window - keeps Mac awake for 2 hours
+caffeinate -d -t 7200 &
+```
+
+---
+
 ## Detailed Breakdown
 
 ### 0:00 - 0:15 | Setup Check (15 min)
+
+> 📄 **Reference:** See [SETUP-CHECKLIST.md](SETUP-CHECKLIST.md) for detailed pre-workshop setup instructions.
 
 #### Learning Outcomes
 
@@ -45,7 +69,8 @@ aws sso login --profile bedrock
 #### Step 2: Launch Claude Code (3 min)
 
 ```bash
-cd ~/projects  # or your preferred folder
+mkdir ~/claude_test
+cd ~/claude_test  # or your preferred folder
 claude
 ```
 
@@ -61,13 +86,13 @@ Tell me a programming joke
 
 #### Step 4: Test Haiku Model with MCP (4 min)
 
-First, ensure the Playwright plugin is installed for web fetching:
+First, verify the Haiku model is configured:
 
 ```text
-/plugin playwright
+/model haiku
 ```
 
-**🎯 Checkpoint:** You see "Added plugin: playwright" or similar confirmation.
+**🎯 Checkpoint:** You should see an ARN path like `arn:aws:bedrock:us-west-2:XXXXXXXX:application-inference-profile/XXXXXXXX`
 
 Then test the fetch capability:
 
@@ -77,7 +102,7 @@ Fetch cheese.com
 
 **💡 Why this test?** This validates that:
 - The Haiku model (faster, cheaper) is configured correctly
-- MCP (Model Context Protocol) can fetch external resources via Playwright
+- MCP (Model Context Protocol) can fetch external resources
 - Your environment variables are set properly
 
 **🎯 Checkpoint:** Claude returns information about the cheese.com website (a cheese encyclopedia with 2,000+ cheeses).
@@ -91,21 +116,27 @@ Fetch cheese.com
 | "Session expired" or SSO errors | AWS credentials timed out | `aws sso login --profile bedrock` |
 | "Invalid ARN" or model errors | Settings misconfigured | Check `~/.claude/settings.json` for correct ARN |
 | Claude hangs on startup | Certificate issues | Verify certificate paths in environment |
-| Fetch command fails | Playwright plugin not installed | Run `/plugin playwright` to add it |
 | Fetch command fails | Haiku model not set | Check `ANTHROPIC_DEFAULT_HAIKU_MODEL` env var |
 | "Permission denied" errors | SSH key not configured | Run `ssh -T git@github.com` to test |
 
-**📋 Facilitator:** If multiple people have the same issue, pause and troubleshoot as a group.
 
 ---
 
-#### Pre-work: Clone the Repository
+#### Pre-work: Clone the Repository and Cache Docker Images
 
 Clone the repo ahead of time:
 ```bash
 git clone git@github.com:kes1smmn/WorkShopClaude1.git
 ```
 
+**Optional: Pre-cache Docker images** (speeds up the Build Together section):
+```bash
+# Pull base images to avoid download delays during the workshop
+docker pull python:3.11-slim
+docker pull node:18-alpine
+docker pull nginx:alpine
+docker pull mongo:latest
+```
 
 ---
 
