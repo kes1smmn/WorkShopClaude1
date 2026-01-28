@@ -193,7 +193,7 @@ Both should work without errors.
 ## 8. Clone Workshop Repository
 
 ```bash
-git clone https://github.com/ksimmon/WorkShopClaude1.git
+git clone https://github.com/kes1smmn/WorkShopClaude1.git
 cd WorkShopClaude1
 ```
 
