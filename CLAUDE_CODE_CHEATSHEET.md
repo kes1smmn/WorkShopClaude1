@@ -29,6 +29,7 @@
 | `/model` | Switch between Claude models |
 | `/memory` | View/edit project memory |
 
+Tip: Use `/init` routinely so that CLAUDE.md has updated context.
 ---
 
 ## Keyboard Shortcuts

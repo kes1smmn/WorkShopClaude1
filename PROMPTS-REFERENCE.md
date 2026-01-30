@@ -26,6 +26,8 @@ When you design this, please use Docker and docker-compose.yml.
 ```text
 /init
 ```
+Tip: You can use `/init` with existing codebase or after file have been generated.
+
 Creates a CLAUDE.md file with project context.
 
 ### Add MCP Server
