@@ -181,7 +181,7 @@ aws sso login --profile bedrock
 # Start Claude
 claude
 
-# Test prompts:
+# Test prompts: [Maybe some network security around this so use the alternative below that shows a plugin use to]
 > Tell me a programming joke
 > Fetch cheese.com
 ```
@@ -189,6 +189,15 @@ claude
 Both should work without errors.
 
 ---
+
+#### Get cheese with playwright plugin
+
+```text
+/plugins
+install playwright
+restart claude
+fetch cheese.com with playwright plugin
+```
 
 ## 8. Clone Workshop Repository
 
