@@ -129,14 +129,7 @@ Clone the repo ahead of time:
 git clone git@github.com:kes1smmn/WorkShopClaude1.git
 ```
 
-**Optional: Pre-cache Docker images** (speeds up the Build Together section):
-```bash
-# Pull base images to avoid download delays during the workshop
-docker pull python:3.11-slim
-docker pull node:18-alpine
-docker pull nginx:alpine
-docker pull mongo:latest
-```
+
 
 ---
 
@@ -299,6 +292,21 @@ Go ahead and run with docker
 
 ```text
 Actually, I want the file size limit to be 200MB
+```
+
+```text
+
+Make a feature branch 'add_local_storage' for this change. Add a local mongo instance to the docker-compose.yml, and implement a way to keep track of all the files hashed. Then display these hashed files in the endpoint "Tables". When you hash a file, also check if the file has been  hashed before. When you setup the mongo instance, I want basic login information, I am not worried about security right now.
+
+could you give me a uri so I can connect to the mongodb via studio3t  
+```
+
+```text
+update the table to use ag-grid. Can you style it like an xkcd comic and use context7      
+```
+
+```text
+I would like to include a pie chart on the tables page that will display either the file extensions or the hash type from the table the user should be able to toggle. Refer to this example https://observablehq.com/@d3/pie-chart-update.  Use d3.js and context7 
 ```
 
 **📋 Facilitator: Highlight these key concepts:**
@@ -568,7 +576,6 @@ one for pytest, one for vitest
 | Resource | Link |
 |----------|------|
 | Workshop repo | github.com/kes1smmn/WorkShopClaude1 |
-| Slack channel | #claude-code-workshop |
 | Prompts reference | `PROMPTS-REFERENCE.md` in repo |
 | Claude Code docs | claude.ai/code |
 
