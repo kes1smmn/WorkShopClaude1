@@ -105,11 +105,25 @@ ls ~/certs/ARUPRootCA.crt
 
 ### Install Claude code for Windows
 
+PowerShell option
 ```powershell
 irm https://claude.ai/install.ps1 | iex
 ```
+
+Command Prompt option
 ```Windows CMD
 curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
+```
+
+```powershell
+# Add to PATH (permanent)
+[Environment]::SetEnvironmentVariable("Path", "$([Environment]::GetEnvironmentVariable("Path", "User"));$env:USERPROFILE\.local\bin", "User")
+
+# Refresh PATH in current session
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+
+# Verify it works
+claude --version
 ```
 
 ### Install Claude code for macOS/Linux
