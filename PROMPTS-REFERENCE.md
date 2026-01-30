@@ -4,6 +4,10 @@ A collection of effective prompts for common development tasks. Use these as tem
 
 ---
 
+
+
+
+
 ## Project Initialization
 
 ### Start a New Project
