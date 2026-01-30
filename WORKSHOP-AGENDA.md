@@ -235,6 +235,8 @@ Use context7 to look up Mantine Dropzone component
 
 **🎯 Interactive Checkpoint:** Everyone type this prompt together (don't hit enter yet):
 
+Shift tab untill you are in plan mode
+
 ```text
 Let's plan a basic web application using Mantine, the react components library,
 for the front end and Flask for the back end. I want a very basic set up with
