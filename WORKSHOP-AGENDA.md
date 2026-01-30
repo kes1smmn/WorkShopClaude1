@@ -124,12 +124,15 @@ Fetch cheese.com
 
 #### Pre-work: Clone the Repository and Cache Docker Images
 
-Clone the repo ahead of time:
+Clone the repo (HTTP method, signed out users)
+```
+git clone https://github.com/kes1smmn/WorkShopClaude1.git
+```
+
+SSH method (may need prior setup for SSH keys)
 ```bash
 git clone git@github.com:kes1smmn/WorkShopClaude1.git
 ```
-
-
 
 ---
 
