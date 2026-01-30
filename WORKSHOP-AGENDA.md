@@ -196,6 +196,7 @@ Use `Shift+Tab` to cycle through modes, or type `/plan` to enter plan mode.
 | `Ctrl+C` | Stop current operation |
 | `Escape` | Cancel input / reject change |
 | `!` prefix | Run bash directly (e.g., `! git status`) |
+| '@' tag | Use this to reference file/folder (e.g., `@myfolder/script.py`|
 | `↑` / `↓` | Navigate command history |
 
 #### MCP Preview (1 min)
